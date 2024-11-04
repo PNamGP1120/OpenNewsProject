@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiet san phan</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+
+</head>
+<body>
+    <h1 class="subjects">CHI TIET SAN PHAM</h1>
+    <div class="container flex">
+        <div>
+            <img src="{{ url_for('static',filename = product.image)}}" alt="{{ product.name }}">
+        </div>
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <h4>{{ "{:,.1f}".format(product.price) }}</h4>
+        </div>
+    </div>
+</body>
+</html>
