@@ -1,0 +1,26 @@
+*{
+    font-family: Tahoma;
+}
+
+h1.subjects{
+    text-align: center;
+}
+
+body{
+    background-color: lightblue;
+    color: darkblue;
+}
+
+table.product{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
