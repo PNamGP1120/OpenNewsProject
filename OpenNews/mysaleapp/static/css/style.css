@@ -6,10 +6,6 @@ h1.subjects{
     text-align: center;
 }
 
-body{
-    background-color: lightblue;
-    color: darkblue;
-}
 
 table.product{
     border-collapse: collapse;

@@ -6,7 +6,10 @@ import utils
 @app.route('/')
 def home():
     cates = utils.load_categories()
-    return render_template('index.html', categories=cates)
+    cate_id = request.args.get('category_id')
+    kw = request.args.get('keyword')
+    products = utils.load_products(cate_id=cate_id, kw=kw)
+    return render_template('index.html', categories=cates, products=products)
 
 
 @app.route('/products')
@@ -27,4 +30,7 @@ def product_detail(product_id):
 
 
 if __name__ == '__main__':
+    from mysaleapp.admin import *
+
+
     app.run(debug=True)
