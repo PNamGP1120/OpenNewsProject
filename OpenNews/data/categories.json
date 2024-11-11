@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Business",
+    "description": "News and updates on the business world, including finance, markets, and industry trends."
+  },
+  {
+    "id": 2,
+    "name": "Entertainment",
+    "description": "Latest news in movies, music, television, and celebrity culture."
+  },
+  {
+    "id": 3,
+    "name": "Health",
+    "description": "Information on health topics, wellness, and medical advancements."
+  },
+  {
+    "id": 4,
+    "name": "Politic",
+    "description": "Coverage of political events, policies, and government-related news."
+  },
+  {
+    "id": 5,
+    "name": "Sport",
+    "description": "Updates and scores from the world of sports, covering major leagues and events."
+  },
+  {
+    "id": 6,
+    "name": "Technology",
+    "description": "The latest in technology, gadgets, innovation, and tech industry news."
+  }
+]

@@ -1,0 +1,117 @@
+{% extends 'layout/base.html' %}
+{% block title %}
+    Trang chủ
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        {% if news %}
+            <div class="row">
+                {#            {% for p in products %}#}
+                {#                <div class="col-md-3 col-xs-12" style="padding: 5px">#}
+                {#                    <div class="card" style="padding: 5px">#}
+                {##}
+                {#                        <img class="card-img-top" src="{{ url_for('static', filename = p.image) }}"#}
+                {#                             alt="{{ p.name }}">#}
+                {#                        <div class="card-body">#}
+                {#                            <h4 class="card-title">{{ p.name }}</h4>#}
+                {#                            <p class="card-text">{{ "{:,.1f}".format(p.price) }}</p>#}
+                {#                            <a href="#" class="btn btn-primary">Đặt hàng</a>#}
+                {#                        </div>#}
+                {##}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            {% endfor %}#}
+                <section class="main">
+                    <div class="thumbnail">
+                        <div class="thumb-img"><img src="{{ news[0].image_url }}" alt="" srcset=""></div>
+                        <div class="thumb-title">
+                            <div class="inner-div"><a href="#" style="color: red; font-weight: bold; text-decoration: none;">Trending</a>
+                            </div>
+                            <div class="inner-div"><a href="#" style=" color: black; font-weight: bold; font-size: 25px; text-decoration: none;">{{ news[0].title }}</a></div>
+                            <div class="inner-div" style="font-size: 14px;">{{ news[0].description }}
+                            </div>
+                            <div class="time-title">
+                                <div>{{ news[0].created }}</div>
+                                <div style="color: gray">{{ news[0].author }}</div>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-regular fa-share-from-square"></i>
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="tab-news">
+                    <button>News for you</button>
+                    <div class="title">Thursay, October 20</div>
+                </div>
+                <div class="main-news">
+                    <div class="left-news">
+                        <div class="feat-news left-news">
+                            <a href="#">Featured News</a>
+                            <img src="/static/images/nav.png" alt="" srcset="">
+                            <div class="red"></div>
+                        </div>
+                        <div class="left-news flex">
+                            {% if news %}
+                                {% for new in news %}
+
+                                    <div class="list-news">
+                                        <div class="content"><img src={{ new.image_url }} alt=""></div>
+
+                                        <a href="#">{{ new.title }}</a>
+                                        <p>{{ new.description }}</p>
+                                        <div class="time-title font_size14">
+                                            <div>{{ new.created }}</div>
+                                            <div style="color: gray">{{ new.author }}</div>
+                                        </div>
+                                        <div class="stick"></div>
+                                        <div class="contact">
+                                            <div class="icon-contact">
+                                                <div class="heart-tact">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                    <p>18</p>
+                                                </div>
+                                                <div class="share-tact">
+                                                    <i class="fa-regular fa-share-from-square"></i>
+                                                    <p>18</p>
+                                                </div>
+                                                <div class="mark-tact">
+                                                    <i class="fa-regular fa-bookmark"></i>
+                                                    <p>18</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <button id="view-more">VIEW MORE</button>
+                        </div>
+                    </div>
+                    <div class="right-news">
+                        <div class="right-news feat-news-right">
+                            <a href="#">Local News</a>
+                            <img src="/static/images/local.png" alt="" srcset="">
+                            <div class="red"></div>
+                        </div>
+                        <div class="list-right-news">
+                            {% for new in news[::-1][:4] %}
+                            <div class="list-right-news">
+                                <div class="newlocal"><img src="{{ new.image_url }}" alt=""></div>
+{#                                <p>Query.filter_by() takes 1 positional argument but 2 were given</p>#}
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p><i>Không có sản phẩm nào</i></p>
+        {% endif %}
+    </div>
+{% endblock %}

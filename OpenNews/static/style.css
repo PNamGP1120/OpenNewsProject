@@ -326,3 +326,7 @@ body{
     cursor: pointer;
     padding: 0;
 }
+.content{
+    height: 200px;
+    width: 100%;
+}

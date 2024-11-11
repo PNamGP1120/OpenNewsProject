@@ -33,25 +33,12 @@
         <div class="logo"><img src="/static/images/logo.jpg" alt="ou_news" srcset=""></div>
         <ul class="menu">
             <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="#" class="nav-link">For you</a></li>
-            <li><a href="#" class="nav-link">Following</a></li>
-            <li><a href="#" class="nav-link">World</a></li>
-            <li><a href="#" class="nav-link">Local</a></li>
-            <li><a href="#" class="nav-link">Politics</a></li>
-            <li><a href="#" class="nav-link">Business</a></li>
-            <li><a href="#" class="nav-link">Entertainment</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">More</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Science</a></li>
-                    <li><a class="dropdown-item" href="#">Sport</a></li>
-                    <li><a class="dropdown-item" href="#">Climate</a></li>
-                    <li><a class="dropdown-item" href="#">Weather</a></li>
-                    <li><a class="dropdown-item" href="#">Technology</a></li>
-                    <li><a class="dropdown-item" href="#">TV Shows</a></li>
-                </ul>
-            </li>
+
+            {% for c in cates %}
+                <li><a href="#" class="nav-link">{{ c.name }}</a></li>
+
+            {% endfor %}
+
         </ul>
     </div>
     <div class="right">
@@ -59,6 +46,7 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="search"><img src="/static/images/search-icon.png" alt="search_icon" srcset=""></button>
         </form>
-        <button class="btn btn-outline-success" type="submit">Sign In</button>
+        <button class="btn btn-outline-success"><a href="{{ url_for('login') }}">Sign in</a></button>
+        <button class="btn btn-outline-success"><a href="{{ url_for('register') }}">Register</a></button>
     </div>
 </nav>

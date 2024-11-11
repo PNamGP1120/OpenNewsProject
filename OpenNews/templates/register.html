@@ -1,0 +1,56 @@
+{% extends 'layout/base.html' %}
+{% block title %}
+    Register | Open News
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="login-container">
+        {% if error %}
+            <div class="alert alert-danger">
+            <h4>{{  error }}</h4>
+            </div>
+        {% endif %}
+        <img src="/static/images/logo.jpg" alt="Open News Logo" width="50">
+        <h2>Open <span>News</span></h2>
+        <p>Gives you more insight and clarity</p>
+
+        <form action="/register" method="post" enctype="multipart/form-data">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required>
+
+
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+
+            <label for="repassword">RE Password</label>
+            <input type="password" id="repassword" name="repassword" required>
+            <br>
+            <label for="avatar">Avatar</label>
+            <input type="text" id="avatar" name="avatar" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p>or continue with</p>
+
+        <div class="social-login">
+            <button><i class="fab fa-facebook"></i> Facebook</button>
+            <button><i class="fab fa-google"></i> Google</button>
+        </div>
+
+        <p class="signup">don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+{% endblock %}
+
+
